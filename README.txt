@@ -1,15 +1,36 @@
 ######################
 Prediction of Methane Adsorption Isotherms in Metal-organic Frameworks by Neural Networks: Two-dimensional Energy Gradient Feature and Masked Learning Mechanism
 
---------------------------------
-The neural network architecture consists of one input layer, six hidden layers and one output layer. The number of neurons in each layer is as follows: 64-128-256-256-128-64。
-Input features：2D-EGF  LCD  	PLD	desity(g/cm^3)	VSA(m^2/cm^3)	GSA(m^2/g)	Vp(cm^3/g)	void_fraction	functional_groups	metal_linker	organic_linker1	organic_linker2	topology	 H	C	N	O	F	P	S	Cl	Br	I	V	Cu	Zn	Cr	Ni	Ba	metal type	 total degree of unsaturation	metalic percentage	 oxygetn-to-metal ratio	electronegtive-to-total ratio	 weighted electronegativity per atom	 nitrogen to oxygen	uc_volume	alpha	beta	gamma	lengtha	lengthb	lengthc 	TK
-Output targets：bi_0   qmax	delta_H	0.001	5	10	15	20	25	30	35	40	45	50	55	60	65	70	75	80	85	90	95	99.99999bar  (0-99.99bar)
-Activation functions：Tanh
-Learning rate：0.001
-optimization algorithm：Adam
-Loss function: MSEloss
-training epochs:15000
+## Project Overview
+This project aims to predict the adsorption isotherms of methane gas on Metal-Organic Frameworks (MOFs) at different temperatures using machine learning methods. We propose a neural network model with a masking operation to improve prediction accuracy and evaluate the model's generalization ability.
+
+## Workflow
+
+1. **Feature Extraction and Data Preparation**
+   - Extract various features of MOFs, including geometric features, energy features, and more.
+   - Calculate the adsorption isotherms of methane gas on MOFs at different temperatures using constrained Density Functional Theory (cDFT).
+
+2. **Model Construction**
+   - Develop a neural network model.
+   - Introduce a masking operation into the network to enhance prediction accuracy.
+   - For detailed model implementation, please refer to: `2Dnn_masked_4p.py`
+
+3. **Model Evaluation**
+   - Evaluate the prediction accuracy of the model on the test set.
+   - Assess the model's generalization ability through cross-dataset testing.
+
+## Data Description
+We provide part of the preprocessed raw data:
+- `mofdatabase_features_clean_data_4P.csv`: Contains MOF features and related adsorption data.
+
+## Usage Instructions
+1. View the model implementation: `2Dnn_masked_4p.py`
+2. Use the provided dataset for model training and testing.
+3. The dataset can be expanded or model parameters adjusted according to specific needs.
+
+## Contact Information
+For any questions or suggestions, please contact the project maintainers.
+
 
 
 
